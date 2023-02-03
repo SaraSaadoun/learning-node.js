@@ -1,0 +1,40 @@
+some modules are built in the core of node , ex: os - fs - ...
+
+other pkgs that users 've made we can still use them
+ ex:  utility lib, date/time lib , frameworks(Express), ..
+ we can install them with npm 
+ npm is automatically installed with node
+ npm is a tool to install, update or remove pkgs into our computer and also into our individual projects to use
+
+
+ 1.nodemon:
+    is a tool that helps develop Node.js based applications
+    by automatically restarting the node application when 
+    file changes in the directory are detected.
+
+node install -g nodemon : globally install nodemon in our computer
+
+pkg file (package.json) : -json file that keeps track of any pkgs being installed locally to our project in addition to proj details and so on
+                          -shortly keeps track of our project dependences
+                          - allow to share all project codes without uploading node_module folder:
+                            u just enter npm install in the termainal and it looks in the pkg.json file in dependences
+                            and install all of them
+
+dependences : pkgs installed to a specific project, so it depneds on 
+
+used a 3rd party pkg ? u should create pkg file by "npm init"
+
+pkg-lock.json -> keeps track of different dependences versions we 've installed in our project
+              
+2.lodash
+npm i --save lodash
+i => install shortcut
+--save => save it to our local dependences for this project (not globally)
+--save is used for old versions of node otherwise u may not type it if u 've a recent version
+
+
+# after installing a pkg locally a node_module folder appers
+ which include folders and dependences needed by this pkg
+ -do NOT upload this huge folder if u share ur project (like in gitHub)
+
+
