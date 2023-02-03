@@ -1,0 +1,57 @@
+server side is powered by node and js
+            listening for incoming requests from the browser
+
+----------------------                    ------------------
+   browser            -                    -    server
+url (website address)-  --------->------- -
+                     -                    -   node.js
+                     -  ---------<------- -
+                     -                    -  
+----------------------                    ------------------
+
+1.enter website address / domain name to the browser
+2.browser sends a request to the server that powering this website
+3.the server looks for this request and decide what to send back to 
+  the browser (inn most cases: HTML pages(others imgs - json - ..)) and send it
+4.the HTML page is dispalyed in the browser
+
+# How the browser knows the correct server to send the request?! 
+first lets know more about ip addresses and port node
+
+
+# IP address:
+
+    -all computers connected to the internet have a unique ip address
+    -hosts: computers that host websites on the internet
+    -so if we need to connnect a server on a host computer , 
+     firat,  know its ip address,
+     enter it to the browser.
+    -ip : series of numbers ( hard to remember )
+        instead we use "domain names" to mask these ip addresses
+
+    -domain name is associated with the corresponding ip address
+
+# Sending req and geting response :
+
+                           GET Request
+----------------------                             ------------------
+   browser           -  look up the ip address     -    host
+                     -   assoc with that domain,   -            
+url (domain name)    -  --------->---------------- -
+                     -  use ip to connect          - 
+                     - to the server with          -
+                     -  that host computer         -           
+                     -                             -
+                     - ---------<----------------  -  
+----------------------        <HTML<               ------------------
+
+            "communication via HTTP typer-text transfer protocol"
+
+get request : made to get certain resouce (ex : HTML page) from the server
+post request : made to send data to the server(from web form for ex)
+
+the communication between them is via HTTP typer-text transfer protocol
+HTTP : set of instructions which tells how communication occurs
+       like human communictation => languages
+
+
