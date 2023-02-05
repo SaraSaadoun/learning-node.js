@@ -1,0 +1,5 @@
+express : a framework that helps to easily manage our routing ,request, server side logic, responses, etc
+            clean code and save time
+
+npm install express 
+(locally)
