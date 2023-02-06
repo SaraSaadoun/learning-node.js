@@ -26,7 +26,7 @@ app.get("/about-us", (req, res) => {
 //    ->- create middleware function and fire it (meaning later)
 app.use((req, res) => {
   //u should specify the status code manually
-  res.status(404).sendFile("./views/404.html", { root: `${__dirname}/..` });
+  res.status(404).sendFile("./views/404.html", { root: __dirname });
   //chaining because res.status(404) returns res
 });
 //"use callback func" -> will fire for every single request comming in

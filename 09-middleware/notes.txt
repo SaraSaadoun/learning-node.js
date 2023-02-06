@@ -1,0 +1,23 @@
+middleware : code which runs (on the server) between getting a request and sending a response
+
+            we could have multiple pieces of middleware running on the server
+
+middleware examples:
+1-logger middleware to log details of every request
+2-authentication check middleware for protected routes
+3-to parse json data from requests
+4-return 404 pages
+
+
+-middleware functions are made for us to use
+
+-use a 3rd party middleware called morgan which is a login
+
+-the server protects all of our files automatically
+from users in a browser , so they can't just access 
+any of our files
+
+-so we specify what files to be public and what not
+-use=> express.static(folder_name) // anything in that file will be available as a static to the front end:
+app.use(express.static('public'));
+-u can put imgs,  css , ... in the public folder that are accessable from the browser
