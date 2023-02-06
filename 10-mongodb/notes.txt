@@ -1,0 +1,18 @@
+connect to db using for ex:
+1- plain mongodb api and pkg
+2- mongoose to connect and interact with db
+
+mongoose is an ODM library - Object Document Mapping library
+
+mongoose ----->User Model
+         ----->Blog Model
+         ----->Comment Model
+         ...
+         ...
+         
+         for each collection in ur db
+
+so, u can use methods like find, findById, ....., etc
+for ex: User.findById() find some user by the give id in the users collection using User model
+
+# mongoose handles the conversion of ObjectId of _id into strings for us

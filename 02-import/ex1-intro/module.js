@@ -1,6 +1,6 @@
 const xyz = require("./people");
 //require :default : returns empty obj
-//         can not access var from this file
+//         can not access variables from this file
 //         find and run thiss
 
 //id I need to access sth from people.js file:
