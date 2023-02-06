@@ -8,12 +8,12 @@ app.listen(3000);
 
 //route1
 app.get("/", (req, res) => {
-  res.sendFile("./views/index.html", { root: `${__dirname}/..` });
+  res.sendFile("./views/index.html", { root: __dirname });
 });
 
 //route2
 app.get("/about", (req, res) => {
-  res.sendFile("./views/about.html", { root: `${__dirname}/..` });
+  res.sendFile("./views/about.html", { root: __dirname });
 });
 
 //redirects

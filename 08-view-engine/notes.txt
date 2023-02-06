@@ -1,0 +1,24 @@
+view engine or templete engine(in express)
+allow to inject dynamic data and logic into html like variables
+
+different templete engines that works in express:
+1.express handlebar
+2.pug
+3.EJS (will use this)
+
+EJS :
+    tags : <% some js that runs in the server side%>
+           <%= %>  >>>>> output
+    pass data into ejs files by passing object as the 2nd argument
+    to the .send method, then use field name in ejs file
+    ex: in js file : res.render("about", { title: "About" });
+        in ejs file: <title>Blogs | <%= title%></title>
+
+Server Side Rendering:
+
+              -----------------
+EJS files -> |EJS view engine  | -> HTML page -----> pass it to the browser
+              -----------------
+
+
+Partials / partial templetes : common things in one place like nav ,...
