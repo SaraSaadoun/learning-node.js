@@ -5,5 +5,10 @@
     <title>Blog | <%= title%></title>
     <!-- Some Copied Style -->
     <!-- looks automatically in the public folder (express.static) -->
+    <!-- solved error of linking to css : 
+            note that this is included in ejs file so this path is relative to for ex index.js
+            .. -> get out of views folder
+            -> express searches for public folder         
+    -->
     <link rel="stylesheet" href="./../styles.css"> 
 </head>

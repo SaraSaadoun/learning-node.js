@@ -1,7 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
-const Blog = require("./models/blog");
+const blogRoutes = require("./routes/blogRoutes");
 
 //express app
 const app = express();
@@ -11,12 +11,13 @@ app.set("view engine", "ejs");
 
 //make any file in public folder is a static file for the front end
 app.use(express.static("public"));
-
+app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev")); //dev/tiny/... -> how it is formated
 //connect to mongodb
 const dbURI =
   "mongodb+srv://test-user:test1234@cluster0.gr6xp1u.mongodb.net/node-db?retryWrites=true&w=majority";
 mongoose.set("strictQuery", true); //to supress the warning appeared
+//returns promise
 mongoose
   .connect(dbURI)
   .then((result) => {
@@ -35,20 +36,7 @@ app.get("/about", (req, res) => {
 });
 
 //blog routes
-app.get("/blogs/create", (req, res) => {
-  res.render("create", { title: "Create a new Blog" });
-});
-app.get("/blogs", (req, res) => {
-  Blog.find()
-    .sort({ createdAt: -1 }) //desc
-    .then((result) => {
-      res.render("index", { title: "All Blogs", blogs: result });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
-
+app.use("/blogs", blogRoutes); //apply all of the handlers in it to the app
 //404 page
 //should be at the bottom because it sends a response, so the code after it will never be executed
 app.use((req, res) => {

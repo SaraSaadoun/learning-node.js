@@ -1,0 +1,18 @@
+Requests types:
+ 
+    GET requests to get resource
+    POST   "          create new data
+    DELETE "          delete data
+    PUT    "          update data
+
+same url can handle multiple requests
+for ex localhost:3000/blogs/:id  (:id -> variable)
+            GET - DELETE - PUT
+
+send POST requests from forms when submitting using:
+fetch api
+async library
+from the web form itself
+
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/nav.ejs') %>
+    
+    <div class="details content">
+        <h2><%=blog.title%></h2>
+        <div class="content">
+            <p><%=blog.body%></p>
+        </div>
+        <a class="delete" data-doc=<%=blog._id%>><img src="../../trashcan.svg" alt="delete"></a>
+    </div>
+    <%- include('../partials/footer.ejs') %>
+    <script>
+        const trashcan = document.querySelector('a.delete');
+        trashcan.addEventListener('click', (e)=>{
+            const endpoint = `/blogs/${trashcan.dataset.doc}`;
+
+            fetch(endpoint, {
+                method: 'DELETE'
+            })
+            .then(response=>{
+                //response is the json data
+                return response.json() // parse into js obj
+            })
+            .then(data=>window.location.href = data.redirect) //data.redirect contain the url
+            .catch(err=>console.log(err));
+            //1.delete btn is clicked
+            //2.fetch api to delete the blog using id by sending it to the server
+            //3.server delete it and respond by json contianing redirection url (can't redirect automatically)
+            //4.parse it into js object in the front end
+            //5.redirect to the url corresponding to redirect field in this js obj
+            //6.the server handles this redirection
+            
+        })
+    </script>
+</body>
+</html>

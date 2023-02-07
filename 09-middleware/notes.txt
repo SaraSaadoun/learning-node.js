@@ -1,3 +1,5 @@
+//note I changed the create blog page url to /create instead of /blogs/create (because of css 404 error)
+
 middleware : code which runs (on the server) between getting a request and sending a response
 
             we could have multiple pieces of middleware running on the server

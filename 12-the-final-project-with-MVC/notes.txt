@@ -1,0 +1,12 @@
+MVC : model, view, controller
+      a way of structuring our code & files
+      keeps code more modular, reusable & easier to read
+
+views: where we create html templetes
+models: how we describe our data structure and use them to interact with the database
+controllers: forms the link between our models and views 
+
+route files matches incomming requests and passes them to the correct controller function
+a controller communicates with the appropriate model to get data into a view 
+and the view then renders that data into its template and it gets sent to the browser
+
